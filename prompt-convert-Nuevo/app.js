@@ -47,4 +47,4 @@ do {
         alert("Opción no valida, por favor elige una opción valida.");
     } // Se guarda el tipo de operación, el monto de entrada (ARS), el monto de salida (USA) Y la fecha//
     
-}while( decis);
+}while( seleccionUsuario !== 3); // El bicle se repite hasta que el usuario elija salir//
