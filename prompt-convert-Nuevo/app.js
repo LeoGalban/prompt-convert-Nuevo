@@ -27,9 +27,24 @@ do {
         if (montoARS >0 ) { //Verifica que el monto sea positivo//
             let resultadoUSD = convertirARSDolares(montoARS);
             alert("El monto es USD es: " + resultadoUSD.toFixed(2) + "USD");
-
-            
-
+            //Guarda la operación en el array de objetos//
+            //Se guarda el tipo de operación, el monto de entrada (ARS), el monto de salida (USA) Y la fecha//
+            historiasConversion.push({
+                tipo: "Conversión",
+                entrada: montoARS,
+                salida: resultadoUSD.toFixed(2),
+                fecha:new Date().toLocaleDateString() //fecha y hora de la conversión//
+            });
+        } else {
+            alert("El monto debe ser mayor a 0.");
         }
-    }
-};
+    }else if (seleccionUsuario ===2) { 
+        console.log("Historial de conversiones:");
+        console.table(historiasConversion);
+    } else if ( seleccionUsuario === 3) {
+        alert("¡Hasta luego!");
+    }else {
+        alert("Opción no valida, por favor elige una opción valida.");
+    } // Se guarda el tipo de operación, el monto de entrada (ARS), el monto de salida (USA) Y la fecha//
+    
+}while( decis);
